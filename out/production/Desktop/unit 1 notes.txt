@@ -1,0 +1,28 @@
+-> what is java
+java is a object oriented programming language
+it is created by sun microsystems in 1995
+it is created by the team lead by james gosling
+it is platform independent which runs on the logic of "write once,run anywhere"
+it is used to develop mobile applications(kotlin),web applications(spring),web servers and games.
+
+-> features of java
+simple
+secure
+multithreading
+oops
+dynamic
+interpreted
+architechure-neutral
+portable
+
+-> java architechure
+jvm: java virtual machine
+provides runtime environment in which java bytecode can be executed
+jvm is platform dependent 
+
+jre: java runtime environment
+jre is jvm + set of libraries
+it is platform independent
+
+jdk: java development kit
+jdk is jre + development tools
