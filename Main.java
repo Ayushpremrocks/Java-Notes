@@ -1,34 +1,21 @@
-import java.util.Scanner;
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 3; i++) {
+            System.out.println(Thread.currentThread().getName() + " -> " + i);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-
-        while (t-- > 0) {
-            int n = sc.nextInt();
-            int x = sc.nextInt();
-            int k = sc.nextInt();
-            String pos = sc.next();
-
-            long count = 0;
-            int j = 0;
-
-            for (int i = 0; i < k; i++) {
-                if (pos.charAt(j % n) == 'L') {
-                    x -= 1;
-                    j++;
-                } else if (pos.charAt(j % n) == 'R') {
-                    x += 1;
-                    j++;
-                }
-                if (x == 0) {
-                    count++;
-                    j = 0;
-                }
-            }
-            System.out.println(count);
-        }
-        sc.close();
+        Thread t1 = new Thread(new MyRunnable());
+        Thread t2 = new Thread(new MyRunnable());
+        t1.start();
+        t2.start();
     }
 }
